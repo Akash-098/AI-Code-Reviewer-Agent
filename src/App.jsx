@@ -7,6 +7,7 @@ import  rehypeHightlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import axios from 'axios'
 import "./App.css";
+const API_URL = "https://ai-code-review-backend-pi.vercel.app";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,13 +31,16 @@ function App() {
 
   // }
 
-const API_URL = process.env.REACT_APP_API_URL;
-
-async function reviewCode() {
-  console.log("API_URL:", API_URL); // check karo
-  const response = await axios.post(`${API_URL}/ai/get-review`, { code });
-  setReview(response.data);
-}
+  async function reviewCode() {
+    try {
+      console.log("API_URL:", API_URL); // check karo console me
+      const response = await axios.post(`${API_URL}/ai/get-review`, { code });
+      setReview(response.data);
+    } catch (err) {
+      console.error("Error calling backend:", err);
+      setReview("Error: Could not fetch review from backend.");
+    }
+  }
 
 
   return (
