@@ -30,9 +30,10 @@ function App() {
 
   // }
 
-  const API_URL = process.env.REACT_APP_API_URL;  
+const API_URL = process.env.REACT_APP_API_URL;
 
 async function reviewCode() {
+  console.log("API_URL:", API_URL); // check karo
   const response = await axios.post(`${API_URL}/ai/get-review`, { code });
   setReview(response.data);
 }
