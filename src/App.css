@@ -26,7 +26,7 @@ main .right {
   border-radius: 0.8rem;
 }
 main .left {
-  background-color: black;
+  background-color: #19183B;
   position: relative;
 }
 
@@ -37,25 +37,62 @@ main .left {
   width: 100%;
   margin: 0;
   border-radius: 0.8rem;
-  background-color: rgb(17, 17, 17);
+  background-color: #19183B;
+ 
 }
 
 main .left .review {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background-color: aqua;
-  color: black;
+  background-color: rgba(73, 163, 171, 0.249);
+  color: rgb(255, 255, 255);
   padding: 0.5rem 2rem;
   font-weight: 500;
   cursor: pointer;
   user-select: none;
-  border-radius: 0.7rem;
+  border-radius: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+main .left .review:hover {
+  background-color: #19183B;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
 }
 
 main .right {
-  background-color: rgb(75, 72, 72);
+  background-color: #001229;
   padding: 1rem 2rem;
   font-size: 1.2rem;
+  color: rgb(255, 255, 255);
   overflow: auto;
+  border: 1px solid white;
 }
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  main .left,
+  main .right {
+    flex-basis: 100%;
+  }
+
+  main .right {
+    font-size: 1rem;
+  }
+
+  main .left .review {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+ /* upgraded wala ye h */
+
+
