@@ -31,7 +31,7 @@ function App() {
   }
 
     setLoading(true);
-    const response = await axios.post("https://ai-code-review-backend-eta.vercel.app/ai/get-review", {
+    const response = await axios.post("https://ai-backend-agent.vercel.app/ai/get-review", {
       code,
     });
 
